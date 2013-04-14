@@ -1,5 +1,5 @@
 (function () {
-  var $page, $txtWatch, $btnStart;
+  var $page, $txtWatch, $txtClock, $btnStart, $btnHide;
 
   $page = $('#watch_page');
   if (!$page.data.initialized) {
@@ -11,14 +11,22 @@
 	//alert("inside pageInit");
 	$txtWatch = $('#watch');
 	$txtWatch.val('0');
+	$txtClock = $('#clock');
     $btnStart = $('#start');
     $btnStart.click(onStartClick);
+	$btnHide = $('#hide');
+    $btnHide.click(onHideClick);
   }
   
   function onStartClick() {
-     alert("inside onStartClick");
+     //alert("inside onStartClick");
 	 var value = $txtWatch.val();
 	 $txtWatch.val(incrementValue(value));
+  }
+  
+  function onHideClick() {
+     //alert("inside onHideClick");
+	 $txtClock.attr("class", "hide");
   }
   
   function incrementValue(value) {
@@ -27,5 +35,6 @@
 	  number++;
 	  return number;
   }
-
+  
+  
 })();
