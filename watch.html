@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"" />
+  <title>Weather</title>
+  <link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+  <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    // Need to bind to mobileinit before jQ mobile library is loaded
+    $(document).bind('mobileinit',function(){
+      $.mobile.selectmenu.prototype.options.nativeMenu = false;
+      $.mobile.allowCrossDomainPages = true;
+    });
+  </script>
+  <script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+<div data-role="page" id="watch_page" data-add-back-btn="true" data-back-btn-text="Previous"
+data-back-btn-theme="e">
+    <div data-role="header" data-position="fixed">
+    	<h1>Watch</h1>
+  	</div><!-- /header -->
+    
+    <div data-role="content"> 
+    	<p>
+    	Klokke kommer her
+    	</p>
+    	<p>
+    	  <label for="txtKlokke">Klokke</label>
+    	  <input type="text" name="txtKlokke" id="watch">
+    	</p>
+        <button type="button" id="start">Start</button> 
+    </div> <!-- /content -->
+    
+    <div data-role="footer" data-position="fixed">
+      <div data-role="navbar">
+          <ul>
+          <li><a href="index.html" data-icon="info">Home</a></li>
+          <li><a href="watch.html" data-icon="grid" class="ui-btn-active">Watch</a></li>
+          <li><a href="stopwatch.html" data-icon="star">Stopwatch</a></li>
+        
+      	</ul>
+      </div><!-- /navbar --> 
+  	</div><!-- /footer --> 
+  </div><!-- /page -->
+  <script src="js/watch.js"></script>
+</body>
+</html>
+
