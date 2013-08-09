@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>History</title>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+    <script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    // Need to bind to mobileinit before jQ mobile library is loaded
+    $(document).bind('mobileinit',function(){
+		//$.mobile.autoInitializePage=false;
+		//$.mobile.linkBindingEnabled=false;
+        $.mobile.selectmenu.prototype.options.nativeMenu = false;
+        $.mobile.allowCrossDomainPages = true;
+    });
+  </script>
+	<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div data-role="page" id="history_page">
+  <div data-role="header" data- data-position="fixed">
+    <h1>History</h1>
+    <a href="history.html" data-icon="refresh" data-ajax="false" id="refresh" data-theme="e" class="ui-btn-left" data-iconpos="notext"></a> 
+    <a href="" id="slett" data-icon="delete" data-theme="e" class="ui-btn-right" data-icon="delete" data-iconpos="notext"></a>
+  </div>
+  <!-- /header -->
+  
+  <div data-role="content">
+    <div>
+      <!--<button id="slett" type="button" data-inline="true" data-theme="e" data-icon="delete">Slett alle tider</button>-->
+      
+    </div>
+    <p />
+    <p />
+    <div>
+    	<ul id="tider" data-role="listview" data-filter="true">
+    		<li id="entryTemplate" style="display:none"><span id="dato">Dato</span><span id="tid">000</span></li>
+		</ul>
+    </div>
+    
+  </div>
+  <!-- /content -->
+  
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+      <ul>
+        <li><a href="index.html" data-transition="fade" data-ajax="false" data-icon="home" >Stopwatch</a></li>
+        <li><a href="history.html" class="ui-btn-active ui-state-persist" data-icon="search" >History</a></li>
+      </ul>
+    </div>
+    <!-- /navbar -->  
+  </div>
+  <!-- /footer --> 
+</div>
+<!-- /page --> 
+<script type="text/javascript" src="js/history.js" ></script>
+</body>
+</html>
